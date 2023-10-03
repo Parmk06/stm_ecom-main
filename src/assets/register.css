@@ -1,0 +1,16 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #4f7fef; 
+}
+
+.form-box {
+    background-color: #eff0f1; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 400px;
+}
