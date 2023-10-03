@@ -22,7 +22,7 @@ function Register(){
     const handleSubmition = (event) =>{
         //need to fix
         event.preventDefault();
-        axios.post("http://localhost:3000/register", values)
+        axios.post("http://localhost:8081/register", values)
         // .then(res => console.log(res))
         // // .catch(err => console.log(err)); 
         // .then(err => console.log(err)); 
