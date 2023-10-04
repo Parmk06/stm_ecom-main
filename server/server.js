@@ -17,11 +17,10 @@ const db = mysql.createConnection({
     password: "",
     database: "customer_sign_up"
 })
-app.post('/register', (req,res)=>{
-    const sql ="INSERT INTO register (`name`,`email`,`password`) VALUES (?)";
-    bcrypt.hash(req.body.password.toString(),salt,(err,hash) => {
+app.post('/register', (req, res)=>{
+    const sql ="INSERT INTO login (`name`,`email`,`password`) VALUES (?)";
+    bcrypt.hash(req.body.password.toString(),salt,(err, hash) => {
         if(err) return res.json({Error: "Error for hashing password"});
-    
         const values = [
             req.body.name,
             req.body.email,
@@ -30,11 +29,11 @@ app.post('/register', (req,res)=>{
         ]
         db.query(sql, [values], (err, result) => {
             if(err) return res.json({Error: "Inserting data Error in server"});
-            return res.json({status: "Success"});
+            return res.json({Status: "Success"});
         })
     })
 })
 
-app.listen(8081, () => {
+app.listen(3000, () => {
     console.log("Running...");
 }) 

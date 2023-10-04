@@ -19,14 +19,12 @@ function Register(){
     }
 
      // const navigate = navigate();
-    const handleSubmition = (event) =>{
-        //need to fix
+    const handleSubmit = (event) =>{
+    
         event.preventDefault();
-        axios.post("http://localhost:8081/register", values)
-        // .then(res => console.log(res))
-        // // .catch(err => console.log(err)); 
-        // .then(err => console.log(err)); 
+        axios.post('http://localhost:3000/register', values)
         .then(res => console.log(res))
+       // .then(err => console.log(err));
         .catch(error => {
             // if (error.response) {
             // // The request was made, but the server responded with an error
@@ -49,7 +47,7 @@ function Register(){
                 <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
                     <div className="bg-white p-3 rounded w-25">
                         <h2>Sign Up</h2>
-                        <form onSubmit={handleSubmition}>
+                        <form onSubmit={handleSubmit}>
                             <div className="mb-3">
                                 <label htmlFor="name"><strong>Name</strong></label>
                                 <input type="text" placeholder="Enter your name" name="name" 
